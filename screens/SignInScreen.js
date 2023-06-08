@@ -51,10 +51,12 @@ const SignInScreen = ({ navigation}) => {
             />
        {<Text style={styles.error}>{validationMessage}</Text>}
 
-        <Button title="Sign in" buttonStyle={{marginTop:10, placeholderTextColor: '#ebf1f7', 
-                                              backgroundColor:'#2582f6', borderRadius:10, fontSize:5}} onPress={login} />
-        <Text style={{marginTop:5, fontSize:17, color:'#ebf1f7'}}> Don't have an account yet? 
-        <TouchableOpacity onPress={()=>navigation.navigate('Sign Up')}>
+        <Button title="Sign in"  buttonStyle={{marginTop:10,marginBottom:10, backgroundColor:'#2582f6', borderRadius:10}} onPress={login}>
+                                                <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Sign in</Text>
+                                              </Button>
+                                              
+        <Text style={{marginTop:5, fontSize:17, color:'#ebf1f7', fontFamily:'serif',marginBottom:200}}> Don't have an account yet? 
+        <TouchableOpacity onPress={()=>navigation.navigate('Sign Up')}> 
                 <Text style={{marginTop:6, fontSize:15, color:'#ebf1f7', 
                                 fontStyle:'italic', fontFamily:'serif',
                                 textDecorationLine:'underline'}}>Sign up here</Text> 
@@ -67,7 +69,7 @@ const SignInScreen = ({ navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,  
+    
     backgroundColor: '#0b3188',
     alignItems: 'center',
     justifyContent: 'center',
@@ -75,24 +77,30 @@ const styles = StyleSheet.create({
   },
   error: {
     marginTop: 10,
+    marginBottom:20,
     color: 'red',
+    fontFamily:'serif',
+    fontStyle:'italic'
   },
   email: {
     fontFamily: 'serif',
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
+    color:'#ebf1f7',
   },
   pass: {
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
     fontFamily: 'serif',
+    color:'#ebf1f7',
   },
   logo: {
     width: 250,
     height: 200,
     marginBottom: 20,
+    marginTop:50,
   }
 });
 

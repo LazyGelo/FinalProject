@@ -38,7 +38,7 @@ export default function UpdateData({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "red",
   },
   header: {
     flexDirection: "row",

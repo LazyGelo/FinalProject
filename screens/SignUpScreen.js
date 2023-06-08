@@ -39,35 +39,48 @@ function checkPassword(firstpassword,secondpassword) {
         <Input
           placeholder='Email'
           containerStyle={{marginTop: 10}}
+          fontFamily='serif'
+          color='#ebf1f7'
           value={email}
+          placeholderTextColor={'#ebf1f7'}
           onChangeText={(text) => setEmail(text)}
-          leftIcon={<Icon name='envelope' size={16}/>}
+          leftIcon={<Icon name='envelope' size={16} color={'#ebf1f7'} />}
             />
         <Input
           placeholder='Password'
+          placeholderTextColor={'#ebf1f7'}
+          color='#ebf1f7'
+          fontFamily='serif'
           containerStyle={{marginTop:10}}
           value={password}
           onChangeText={(value) => validateAndSet(value, setPassword)}
           secureTextEntry
-          leftIcon={<Icon name='key' size={16}/>}
+          leftIcon={<Icon name='key' size={16} color={'#ebf1f7'}/>}
           
 
             />
         <Input
           placeholder='Confirm password'
+          placeholderTextColor={'#ebf1f7'}
+          fontFamily='serif'
+          color='#ebf1f7'
           containerStyle={{marginTop:10}}
           value={confirmPassword}
           onChangeText={(value) => validateAndSet(value,setConfirmPassword)}
           secureTextEntry
-          leftIcon={<Icon name='key' size={16}/>}
+          leftIcon={<Icon name='key' size={16} color={'#ebf1f7'}/>}
           onBlur={()=>checkPassword(password,confirmPassword)}
             />  
             {<Text style={styles.error}>{validationMessage}</Text>}
-        <Button title="Sign up" buttonStyle={{marginTop:10}} onPress={createAccount} />
+        <Button title="Sign up" buttonStyle={{marginTop:10,backgroundColor:'#2582f6', borderRadius:10}} onPress={createAccount} >
+                <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Sign up</Text>
+        </Button>
         <View>
-          <Text style={{marginTop:5,fontSize:17}}>Already have an account?
+          <Text style={{marginTop:5,fontSize:17,color:'#ebf1f7', fontFamily:'serif', marginBottom:200}}>Already have an account?
           <TouchableOpacity onPress={()=>navigation.navigate('Sign In')} style={{color:'blue',marginLeft:10}}>
-               <Text>Login here </Text> 
+               <Text style={{marginTop:6, fontSize:15, color:'#ebf1f7',
+                                fontStyle:'italic', fontFamily:'serif',
+                                textDecorationLine:'underline'}}>Login here </Text> 
           </TouchableOpacity>
           </Text>
         </View>
@@ -78,20 +91,23 @@ function checkPassword(firstpassword,secondpassword) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    
-    backgroundColor: 'white',
+
+    backgroundColor: '#0b3188',
     alignItems: 'center',
     justifyContent: 'center',
     
   },
   error: {
     marginTop: 10,
+    marginBottom:20,
     color: 'red',
+    fontFamily:'serif',
+    fontStyle:'italic'
   },
   logo: {
     width: 250,
     height: 200,
+    marginTop:60,
   }
 });
 

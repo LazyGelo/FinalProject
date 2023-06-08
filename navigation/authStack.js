@@ -9,10 +9,10 @@ const Stack = createStackNavigator();
 
 export default function AuthStack() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator>
-        <Stack.Screen name="Sign In" component={SignInScreen} />
-        <Stack.Screen name="Sign Up" component={SignUpScreen} />
+        <Stack.Screen name="Sign In" component={SignInScreen} options={{ title: '', headerStyle:{backgroundColor:'#0b3188'}}} />
+        <Stack.Screen name="Sign Up" component={SignUpScreen} options={{ title: '', headerStyle:{backgroundColor:'#0b3188'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

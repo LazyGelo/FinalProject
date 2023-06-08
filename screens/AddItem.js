@@ -54,6 +54,7 @@ const addShoppingItem = async () => {
   };
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={{fontSize:20, color:'black',fontFamily:'serif',marginTop:10, marginBottom:20, fontWeight:'bold'}}>Add Campsite</Text>
     <TextInput
         placeholder="Camping Site Name"
         style={styles.input}
@@ -85,7 +86,7 @@ const addShoppingItem = async () => {
       const styles = StyleSheet.create({
         container: {
           flex: 1,
-          backgroundColor: "#fff",
+          backgroundColor: "#e6e6fa",
           padding: 10,
         },
         input: {
@@ -95,22 +96,26 @@ const addShoppingItem = async () => {
             width: "90%",
             alignSelf: "center",
             borderRadius: 10,    
-            marginTop: 10,   
-            marginBottom: 10,
+            marginTop: 15,   
+            marginBottom: 15,
+            fontFamily:'serif',
           },
           button:{
             backgroundColor: "#528fcc",
             padding: 10,
-            width: "90%",
+            width: "60%",
             alignSelf: "center",
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 10,
-            marginBottom: 50,
+            marginTop:20,
+
           },
           buttonText:{
             fontSize: 17,
             color: "#000",
+            fontFamily:'monospace'
+
             
           }
     });

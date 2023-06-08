@@ -143,31 +143,35 @@ export default function List({ navigation }) {
               style={{
                 width: "100%",
                 flexDirection: "row",
-                marginTop: 20,
+                backgroundColor:'#22adec',
+                borderRadius:10,
                 padding: 20,
+                marginTop:10,
               }}
             >
               <Text
                 style={{
                   color: "black",
-                  fontSize: 20,
+                  fontSize: 18,
                   flex: 1,
+                  fontFamily:'monospace',
+                  
                 }}
               >
                 {item.data.title}
               </Text>
-              <View style={{ flexDirection: "row-reverse", gap: 20 }}>
+              <View style={{ flexDirection: "row-reverse", gap: 20}}>
                 {/* <TouchableOpacity onPress={() => deletData(item.id)}>
                   <MaterialIcons name="delete" size={30} color="black" />
                 </TouchableOpacity> */}
 
                 {/* Use to update data*/}
-                <TouchableOpacity
+                <TouchableOpacity 
                   onPress={() =>
                     navigation.navigate("ViewItem", {
                       id: item.id,
                       title: item.data.title,
-                     location: item.data.location,
+                      location: item.data.location,
                       price: item.data.price,
                     })
                   }
@@ -197,26 +201,33 @@ export default function List({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e6e6fa",
     padding: 10,
+    
   },
   header: {
     flexDirection: "row",
     width: "90%",
     alignSelf: "center",
-
+    
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 10,
   },
   heading: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
     flex: 1,
+    fontFamily:'monospace',
+    marginTop:10,
+    marginBottom:15,
   },
   noOfItems: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
+    fontFamily:'monospace',
+    marginTop:10,
+    marginBottom:15,
   },
   input: {
     backgroundColor: "#f0f2f5",
@@ -224,7 +235,8 @@ const styles = StyleSheet.create({
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
-    borderRadius: 10,       
+    borderRadius: 10,
+    fontFamily:'monospace',       
   },
   search: {
     backgroundColor: "#f0f2f5",
@@ -232,6 +244,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
+    fontFamily:'monospace'
   },
   button:{
     backgroundColor: "#528fcc",

@@ -13,54 +13,66 @@ export default function HomeScreen( { navigation} ) {
         <Text style={styles.text2}>{user?.email}!</Text>
         <Button title="Add Camping Site" buttonStyle={{
                 backgroundColor: 'rgba(78, 116, 289, 1)',
-                borderRadius: 3,
+                borderRadius: 10,
               }}
               containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
+                width: 220,
+                marginTop:50,
                 marginVertical: 5,
               }}
-               onPress={()=>navigation.navigate('AddItem')} />
-               <Button title="Edit/Delete Camping Site" buttonStyle={{
+               onPress={()=>navigation.navigate('AddItem')}>
+              <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Add Camping Site</Text>
+        </Button>
+        <Button title="Edit/Delete Camping Site" buttonStyle={{
                 backgroundColor: 'rgba(78, 116, 289, 1)',
-                borderRadius: 3,
+                borderRadius: 10,
               }}
               containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
+                width: 220,
+                marginTop:20,
                 marginVertical: 5,
               }}
-               onPress={()=>navigation.navigate('UDShop')} />
+               onPress={()=>navigation.navigate('UDShop')}> 
+               <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Edit/Delete Camping Site</Text>
+               </Button>
         <Button title="Camping Site List" buttonStyle={{
                 backgroundColor: 'rgba(78, 116, 289, 1)',
-                borderRadius: 3,
+                borderRadius: 10,
               }}
               containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
+                width: 220,
+                marginTop:20,
                 marginVertical: 5,
               }}
-               onPress={()=>navigation.navigate('Shopping')} />
-               <Button title="About" buttonStyle={{
+               onPress={()=>navigation.navigate('Shopping')}>
+            <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Camping Site List</Text>
+        </Button>
+        <Button title="About" buttonStyle={{
                 backgroundColor: 'rgba(78, 116, 289, 1)',
-                borderRadius: 3,
+                borderRadius: 10,
               }}
               containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
+                width: 220,
+                marginTop:20,
                 marginVertical: 5,
               }}
-               onPress={()=>navigation.navigate('About')} />
-      <Button title="Sign Out" buttonStyle={{
+               onPress={()=>navigation.navigate('About')}>
+            <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>About</Text>
+        </Button>
+
+        <Button title="Sign Out" buttonStyle={{
                 backgroundColor: 'rgba(78, 116, 289, 1)',
-                borderRadius: 3,
+                borderRadius: 10,
               }}
               containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
+                width: 220,
+                marginTop:20,
+                marginBottom:200,
                 marginVertical: 5,
               }}
-               onPress={() => signOut(auth)} />
+               onPress={() => signOut(auth)} >
+            <Text style={{fontSize:15, color:'#ebf1f7',fontFamily:'serif'}}>Sign Out</Text>
+        </Button>
 
     </View>
   );
@@ -68,8 +80,8 @@ export default function HomeScreen( { navigation} ) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'white',
+    
+    backgroundColor: '#e6e6fa',
     alignItems: 'center',
     justifyContent: 'center',
     
@@ -77,23 +89,20 @@ const styles = StyleSheet.create({
   text1: {
     fontSize: 20,
     alignSelf: "center",
-    marginTop: 25,
+    marginTop: 60,
+    marginBottom:10,
+    fontFamily:'serif',
   },
   text2: {
-    fontSize: 30,
+    fontSize: 20,
     alignSelf: "center",
+    marginBottom:20,
+    fontWeight:'bold',
+    fontFamily:'monospace',
   },
-  button: {
-    backgroundColor: "#528fcc",
-            padding: 10,
-            width: "90%",
-            alignSelf: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 10,
-            marginHorizontal: 50,
-            marginVertical: 10,
+  
+            
   
     
-  },
+  
 });

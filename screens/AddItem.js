@@ -47,6 +47,9 @@ const addShoppingItem = async () => {
 
       } else {
         alert("Camping Site already exist");
+        console.clear(setTitle(""));
+        console.clear(setLocation(""));
+        console.clear(setPrice(""));
       }
 
 

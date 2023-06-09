@@ -143,15 +143,18 @@ export default function List({ navigation }) {
               style={{
                 width: "100%",
                 flexDirection: "row",
-                marginTop: 20,
+                backgroundColor:'#22adec',
+                borderRadius:10,
                 padding: 20,
+                marginTop:10,
               }}
             >
               <Text
                 style={{
                   color: "black",
-                  fontSize: 20,
+                  fontSize: 18,
                   flex: 1,
+                  fontFamily:'monospace',
                 }}
               >
                 {item.data.title}
@@ -167,7 +170,7 @@ export default function List({ navigation }) {
                     navigation.navigate("UpdateData", {
                       id: item.id,
                       title: item.data.title,
-                     location: item.data.location,
+                      location: item.data.location,
                       price: item.data.price,
                     })
                   }
@@ -197,7 +200,7 @@ export default function List({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e6e6fa",
     padding: 10,
   },
   header: {
@@ -210,13 +213,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   heading: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
     flex: 1,
+    fontFamily:'monospace',
   },
   noOfItems: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
+    fontFamily:'monospace',
   },
   input: {
     backgroundColor: "#f0f2f5",
@@ -224,7 +229,8 @@ const styles = StyleSheet.create({
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
-    borderRadius: 10,       
+    borderRadius: 10,  
+    fontFamily:'monospace',     
   },
   search: {
     backgroundColor: "#f0f2f5",
@@ -232,6 +238,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
+    fontFamily:'monospace',
   },
   button:{
     backgroundColor: "#528fcc",
@@ -242,10 +249,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 10,
     marginBottom: 50,
+    
   },
   buttonText:{
     fontSize: 17,
     color: "#000",
-    
+    fontFamily:'monospace',
   }
 });

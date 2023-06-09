@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, ToastAndroid,Pressable, KeyboardAvoidingView,TouchableWithoutFeedback,Button, } from "react-native";
+import { StyleSheet, Text, View, TextInput, ToastAndroid,TouchableOpacity,KeyboardAvoidingView} from "react-native";
 import { db, doc, updateDoc } from "../config/firebase";
 import { useEffect, useState } from "react";
 import { Button } from "@rneui/base";
@@ -29,49 +29,50 @@ export default function UpdateData({ route, navigation }) {
   };
   
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-    <View>
-      <Text style={styles.text1}>Camping Site Info: </Text>
-      <Text style={styles.text2}>Name: {route.params.title}</Text>
-      <Text style={styles.text2}>Location: {route.params.location}</Text>
-      <Text style={styles.text2}>Price: {route.params.price}</Text>
-      <TextInput
-        placeholder="Rename the Campingsite Name"
-        style={styles.input}
-        value={title}
-        onChangeText={(text) => setTitle(text)}
-        //onSubmitEditing={() => updateData(route.params.id)}
-      />
-      <TextInput
-        placeholder="Rename the Location"
-        style={styles.input}
-        value={location}
-        onChangeText={(text) => setLocation(text)}
-        //onSubmitEditing={() => updateData(route.params.id)}
-      />
-      <TextInput
-        placeholder="Price"
-        style={styles.input}
-        value={price}
-        onChangeText={(text) => setPrice(text)}
-        //onSubmitEditing={() => updateData(route.params.id)}
-      />
-      <Pressable style={styles.button} onPress={() => updateData(route.params.id)}>
-      <Text style={styles.buttonText}>Add</Text>
-      </Pressable>
-      
-      
-    </View>
-    </TouchableWithoutFeedback>
+    <KeyboardAvoidingView style={styles.container} behavior='padding'> 
+        <View>
+        <Text style={styles.text1}>Camping Site Info: </Text>
+        <Text style={styles.text2}>Name:</Text>
+          <Text style={styles.text3}>{route.params.title}</Text>
+          <Text style={styles.text2}>Location:</Text>
+          <Text style={styles.text3}>{route.params.location}</Text>
+          <Text style={styles.text2}>Price:</Text>
+          <Text style={styles.text3}>{route.params.price}</Text>
+          <TextInput
+            placeholder="Rename the Campingsite Name"
+            style={styles.input}
+            value={title}
+            onChangeText={(text) => setTitle(text)}
+            //onSubmitEditing={() => updateData(route.params.id)}
+          />
+          <TextInput
+            placeholder="Rename the Location"
+            style={styles.input}
+            value={location}
+            onChangeText={(text) => setLocation(text)}
+            //onSubmitEditing={() => updateData(route.params.id)}
+          />
+          <TextInput
+            placeholder="Price"
+            style={styles.input}
+            value={price}
+            onChangeText={(text) => setPrice(text)}
+            //onSubmitEditing={() => updateData(route.params.id)}
+          />
+          <TouchableOpacity style={styles.button} onPress={() => updateData(route.params.id)}>
+            <Text style={styles.buttonText}>Update</Text>
+          </TouchableOpacity> 
+          
+        </View>
     </KeyboardAvoidingView>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#e6e6fa",
   },
   header: {
     flexDirection: "row",
@@ -83,9 +84,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   heading: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
     flex: 1,
+    fontFamily:'monospace',
+    marginTop:10,
+    marginBottom:15,
+  },
+  buttonText:{
+    fontFamily:'monospace',
+    color: 'white',
   },
   button:{
     backgroundColor: "#528fcc",
@@ -99,26 +107,42 @@ const styles = StyleSheet.create({
 
   },
   noOfItems: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 500,
-    marginRight: 20,
+    fontFamily:'monospace',
+    marginTop:10,
+    marginBottom:15,
   },
   input: {
-    backgroundColor: "#528fcc",
+    backgroundColor: "#f0f2f5",
     padding: 10,
     fontSize: 17,
     width: "90%",
     alignSelf: "center",
     borderRadius: 10,
-    marginTop: 50,
+    marginTop: 20,
+    fontFamily:'monospace',
   },
   text1: {
     fontSize: 20,
     alignSelf: "center",
     marginTop: 25,
+    marginBottom:20,
+    color:'black',
+    fontFamily:'serif',
   },
   text2: {
-    fontSize: 30,
-    alignSelf: "center",
+    fontSize: 20,
+    fontWeight:'bold',
+    marginTop:10,
+    color:'black',
+    marginLeft:20,
+    fontFamily:'monospace',
   },
+  text3: {
+    fontSize: 25,
+    marginLeft:40,
+    color:'black',
+    fontFamily:'serif',
+  }
 });

@@ -61,7 +61,7 @@ export default function HomeScreen( { navigation} ) {
         </Button>
 
         <Button title="Sign Out" buttonStyle={{
-                backgroundColor: 'rgba(78, 116, 289, 1)',
+                backgroundColor: '#0b3188',
                 borderRadius: 10,
               }}
               containerStyle={{
